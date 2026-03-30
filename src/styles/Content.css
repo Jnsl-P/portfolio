@@ -1,0 +1,26 @@
+.content {
+  /* height: 1000vh; */
+  scroll-snap-type: y mandatory;
+  /* position: relative; */
+  width: calc(100% - 80px);
+}
+
+.section-container {
+  position: relative;
+}
+
+.scroll_anchor {
+  scroll-snap-align: start;
+}
+
+@media (min-width: 320px) {
+  .content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: calc(100% - 80px);
+  }
+}

@@ -1,0 +1,49 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --main-theme-color: black;
+  --main-theme-color2: #f4dfc8;
+  --main-theme-color3: #f4eae0;
+  --main-theme-color4: #faf6f0;
+  scroll-snap-type: y mandatory !important;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  background-color: var(--main-theme-color) !important;
+  color: var(--main-theme-color2);
+  overflow-x: hidden;
+  overflow: auto !important;
+  padding: 0px !important;
+  color: #faf6f0;
+}
+
+
+
+#gradientShape {
+  filter: blur(40px);
+  width: 70vw;
+  /* height: 70vh; */
+  aspect-ratio: 1 /1;
+  position: fixed;
+  border-radius: 100%;
+  transform: translateY(-50%);
+  z-index: -1;
+  background: radial-gradient(
+    circle farthest-side,
+    rgba(200, 200, 200, 0.24) 0%,
+    rgba(227, 227, 227, 0.12) 48%,
+    rgba(255, 255, 255, 0) 100% /* Stronger at the edges */
+  );
+}

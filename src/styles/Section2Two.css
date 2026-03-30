@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geologica:wght,CRSV@100..900,0&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Liter&family=Questrial&family=Staatliches&display=swap");
+
+.section_two {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  color: var(--main-theme-color3);
+  font-family: "Inter";
+}
+
+.section_two_container {
+  overflow-y: hidden;
+  margin-top: 50px;
+}
+
+.skill-separate {
+  width: calc(100%) !important;
+  position: fixed;
+  top: 50%;
+  transform: translate(0%, -50%);
+  margin-top: 0px;
+}
+
+.skill-number {
+  flex: 1;
+  color: var(--main-theme-color2);
+}
+
+.skill-description {
+  flex: 1;
+}
+
+@media (min-width: 320px) {
+  .section_two_container {
+    margin-top: 0px;
+  }
+  .card-container {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .skill-number {
+    flex: 0.3;
+    font-size: 140px;
+  }
+
+  .skills-divider {
+    height: 35vh !important;
+  }
+
+  .skill-description {
+    flex: 1;
+  }
+
+  .skill-description h1 {
+    font-size: 1rem !important;
+  }
+  .skill-description ul {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .skill-separate {
+    width: calc(100% - 80px) !important;
+  }
+
+  .skill-number {
+    flex: 0.3;
+  }
+
+  .skill-number {
+    font-size: 12rem;
+  }
+
+  .skills-divider {
+    height: 70vh !important;
+    max-height: 400px;
+  }
+
+  .skill-description {
+    flex: 1;
+  }
+
+  .skill-description h1 {
+    font-size: 2rem !important;
+  }
+  .skill-description ul {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 993px) {
+  .skill-number {
+    flex: 0.5;
+    font-size: 280px;
+  }
+
+  .skills-divider {
+    height: 70vh;
+    max-height: 450px !important;
+  }
+
+  .skill-description {
+    flex: 1;
+  }
+
+  .skill-description h1 {
+    font-size: 2.5rem !important;
+  }
+  .skill-description ul {
+    font-size: 1.5rem !important;
+  }
+}
