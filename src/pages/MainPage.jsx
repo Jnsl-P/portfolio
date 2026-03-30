@@ -1,6 +1,6 @@
 import "../styles/Content.css";
 
-import PageTrack from "../components/PageTrack";
+import PageTrack from "../components/pageTrack";
 import NavigationBar from "../components/NavigationBar";
 import Section1One from "../components/Section1One";
 import Section2Two from "../components/Section2Two";
