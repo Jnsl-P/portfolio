@@ -1,4 +1,4 @@
-import "../styles/pageTrack.css";
+import "../styles/PageTrack.css";
 import { easeInOut, motion } from "motion/react";
 
 export default function PageTrack({ currentSection }) {
