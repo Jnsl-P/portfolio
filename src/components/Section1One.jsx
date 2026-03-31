@@ -98,6 +98,7 @@ export default function Section1One({ setCurrentSection }) {
           {/* INTRO DESCRIPTION */}
           <motion.div
             className="intro-description container-fluid d-flex align-items-end justify-content-center justify-content-md-start position-absolute top-0"
+            initial={false}
             animate={{
               left: secondPart ? "50%" : "0%",
               opacity: secondPart ? 1 : 0,
