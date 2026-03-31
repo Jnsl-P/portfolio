@@ -1,12 +1,11 @@
 import { motion, useScroll } from "motion/react";
-import { useRef, useState, Fragment } from "react";
+import { useState, Fragment } from "react";
 import "../styles/Section2Two.css";
 import ScrollAnchor from "./ScrollAnchor";
 
 export default function Section2Two({ setCurrentSection }) {
   const [isCurrent, setIsCurrent] = useState(false);
   const [test, setTest] = useState(null);
-  const [test2, setTest2] = useState(false);
 
   return (
     <>
@@ -20,17 +19,11 @@ export default function Section2Two({ setCurrentSection }) {
         }}
         onViewportLeave={() => {
           setTest(null);
-        }}>
-        <ScrollAnchor
-          setIsCurrent={setIsCurrent}
-          setCurrentSection={setCurrentSection}
-          sectionNumber={1}
-          anchorname={"scroll_anchor"}
-        />
-      </motion.div>
+          // setIsCurrent(false);
+        }}></motion.div>
 
       {/* PAGE TITLE */}
-      <div
+      <motion.div
         style={{
           position: "relative",
           top: "0%",
@@ -38,12 +31,16 @@ export default function Section2Two({ setCurrentSection }) {
           color: "white",
           opacity: 0.15,
         }}>
-        <div
+        <motion.div
           style={{
             position: "absolute",
             height: "600vh",
             right: "10%",
-          }}>
+          }}
+          onViewportLeave={() => {
+            setIsCurrent(false);
+          }}
+          viewport={{ margin: "0px 0px -10px 0px" }}>
           <h1
             style={{
               position: "sticky",
@@ -55,8 +52,8 @@ export default function Section2Two({ setCurrentSection }) {
             }}>
             SKILLS//
           </h1>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* CONTENT */}
       {skills_items.map((item) => {
@@ -69,14 +66,6 @@ export default function Section2Two({ setCurrentSection }) {
                 viewport={{ margin: "0% 0% -10px 0%" }}
                 onViewportEnter={() => {
                   setTest(item.id);
-                  setTest2(false);
-                }}
-                onViewportLeave={() => {
-                  if (item.id == 5) {
-                    if (isCurrent == false) {
-                      setTest2(true);
-                    }
-                  }
                 }}>
                 <ScrollAnchor
                   setIsCurrent={setIsCurrent}
@@ -110,13 +99,7 @@ export default function Section2Two({ setCurrentSection }) {
                     className=" d-inline-block "
                     initial={{ x: "100%" }}
                     animate={{ x: test == item.id ? "30%" : "100%" }}
-                    transition={{ x: { duration: 0.5 } }}
-                    style={
-                      {
-                        // width: "160px",
-                        // visibility: test == item.id ? "visible" : "hidden",
-                      }
-                    }>
+                    transition={{ x: { duration: 0.5 } }}>
                     {item.id + 1}
                   </motion.div>
                 </div>

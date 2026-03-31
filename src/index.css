@@ -15,6 +15,11 @@
   --main-theme-color2: #f4dfc8;
   --main-theme-color3: #f4eae0;
   --main-theme-color4: #faf6f0;
+/* 
+  --main-theme-color: white;
+  --main-theme-color2: black;
+  --main-theme-color3: black;
+  --main-theme-color4: black; */
   scroll-snap-type: y mandatory !important;
   box-sizing: border-box;
   position: relative;

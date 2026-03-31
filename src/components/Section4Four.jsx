@@ -1,16 +1,16 @@
 import "../styles/Section4Four.css";
 import ScrollAnchor from "./ScrollAnchor";
 import { useState, useRef, useEffect } from "react";
-import emailjs, { sendForm } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Loader from "./Loader";
 import.meta.env;
 import * as bootstrap from "bootstrap";
 import cv_pdf from "../assets/cv_pinguel.pdf";
+import { useNavigate } from "react-router";
 
 export default function Section4Four({ setCurrentSection }) {
   const [isCurrent, setIsCurrent] = useState(false);
   const [loader, setLoader] = useState(false);
-
   const form = useRef(null);
 
   const toastSuccessRef = useRef(null);
@@ -34,7 +34,8 @@ export default function Section4Four({ setCurrentSection }) {
       !form.current.name.value ||
       !form.current.email.value ||
       !form.current.message.value
-    ) {X
+    ) {
+      X;
       setLoader(false);
       toastIncMessage.show();
       return;
@@ -51,6 +52,9 @@ export default function Section4Four({ setCurrentSection }) {
         )
         .then(() => {
           toastSuccessMessage.show();
+          form.current.name.value = "";
+          form.current.email.value = "";
+          form.current.message.value = "";
         })
         .catch((error) => {
           toastFailMessage.show();
@@ -120,19 +124,22 @@ export default function Section4Four({ setCurrentSection }) {
       </div>
 
       <div id="contacts" className="section_five">
-        <div className="section_five_container container d-flex flex-column justify-content-center d-md-block overflow-hidden overflow-y-auto">
-          <div className="hero-name">
-            CONTACTS
-            {/* <br />
-            <span>Pinguel</span> */}
-          </div>
+        <div className="section_five_container container d-flex flex-column justify-content-center  overflow-hidden overflow-y-auto">
+          <div className="hero-name">CONTACTS</div>
 
           <div className="row mt-5 ">
             {/* INFO */}
             <div className="col d-flex flex-column gap-4 mb-3 mb-md-0 left ">
               <div className=" d-flex justify-content-between">
                 <span className="info-key">Email</span>
-                <span className="info-val">pingueljansel@gmail.com</span>
+                <span className="info-val">
+                  {" "}
+                  <a
+                    className="  info-val text-decoration-none "
+                    href="mailto:pingueljansel@gmail.com">
+                    pingueljansel@gmail.com
+                  </a>
+                </span>
               </div>
               <div className="d-flex justify-content-between">
                 <span className="info-key">Phone</span>
@@ -210,7 +217,7 @@ export default function Section4Four({ setCurrentSection }) {
                     id="email-form"
                     className="form-input"
                     type="email"
-                    placeholder="@email.com"
+                    placeholder="your@email.com"
                     name="email"
                     required={true}
                   />
@@ -222,7 +229,7 @@ export default function Section4Four({ setCurrentSection }) {
                   <textarea
                     id="message-form"
                     className="form-input"
-                    placeholder="What's on your mind"
+                    placeholder="Your message here"
                     name="message"
                     required={true}></textarea>
                 </div>

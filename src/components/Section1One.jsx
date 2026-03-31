@@ -1,7 +1,7 @@
-import selfPhoto from "../assets/selfPhoto.png";
+import selfPhoto from "../assets/1000023665.jpg";
 import "../styles/Section1One.css";
-import { motion, spring } from "motion/react";
-import { useState, useRef, useEffect } from "react";
+import { motion } from "motion/react";
+import { useState, useRef } from "react";
 import ScrollAnchor from "./ScrollAnchor";
 
 export default function Section1One({ setCurrentSection }) {
@@ -18,7 +18,6 @@ export default function Section1One({ setCurrentSection }) {
           setIsCurrent(false);
         }}
         viewport={{
-          // margin: "-20px 0px -20px 0px",
           margin: "-50% 0px -50% 0px",
         }}></motion.div>
 
@@ -56,14 +55,19 @@ export default function Section1One({ setCurrentSection }) {
             className="profile-image container-fluid d-flex justify-content-end align-items-start align-items-md-end justify-content-md-start "
             style={{ height: "100vh" }}>
             <div
-              className=" profile-image-main-container d-flex align-items-end mt-md-auto "
+              className=" profile-image-main-container d-flex align-items-end "
               style={{ width: "50%" }}>
               <motion.div
                 className="profile-image-container"
                 initial={false}
                 animate={{ width: secondPart ? "100%" : "60%" }}
                 transition={{ duration: 0.5 }}>
-                <img className="img-fluid" src={selfPhoto} alt="" />
+                <img
+                  className="img-fluid"
+                  src={selfPhoto}
+                  alt=""
+                  style={{ opacity: 0.8 }}
+                />
               </motion.div>
             </div>
           </div>
@@ -159,8 +163,7 @@ export default function Section1One({ setCurrentSection }) {
                     <i>Software Engineering</i>
                   </span>
                   <br />
-                  <span>De La Salle University – Dasmariñas
-</span>
+                  <span>De La Salle University – Dasmariñas</span>
                 </p>
               </div>
               {/* INTERESTS */}
