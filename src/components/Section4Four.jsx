@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import Loader from "./Loader";
 import.meta.env;
 import * as bootstrap from "bootstrap";
-import cv_pdf from "../assets/cv_pinguel.pdf";
+import cv_pdf from "../assets/CV_JanselPinguel.pdf";
 import { useNavigate } from "react-router";
 
 export default function Section4Four({ setCurrentSection }) {
